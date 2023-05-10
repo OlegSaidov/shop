@@ -1,0 +1,9 @@
+<h3>{{product?.name}}</h3>
+<ul>
+  <li>Description: {{product?.description}}</li>
+  <li>Price: ${{product?.price}}</li>
+  <li>Category: {{product?.category}}</li>
+  <li>isAvailable: {{product?.isAvailable ? 'Yes' : 'No'}}</li>
+</ul>
+<button (click)="onAddToCart(product)">Buy Now!</button>
+<br/>
