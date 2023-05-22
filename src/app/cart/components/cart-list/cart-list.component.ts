@@ -8,6 +8,7 @@ import { Product } from 'src/app/products/models/product';
   styleUrls: ['./cart-list.component.scss']
 })
 export class CartListComponent implements OnInit {
+  // Обычно модель записи корзины содержит дополнительные поля, например, количество.
   productsInCart: Product[] = [];
 
   constructor(private cartService: CartService) { }
