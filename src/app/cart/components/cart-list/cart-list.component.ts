@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Product } from 'src/app/products/models/product';
+
 
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
-  styleUrls: ['./cart-list.component.scss']
+  styleUrls: ['./cart-list.component.scss'],
 })
 export class CartListComponent implements OnInit {
-  // Обычно модель записи корзины содержит дополнительные поля, например, количество.
   productsInCart: Product[] = [];
+  totalCost: Number = 0;
+  totalQuantity: Number = 0;
+
 
   constructor(private cartService: CartService) { }
 
@@ -17,7 +20,14 @@ export class CartListComponent implements OnInit {
     this.productsInCart = this.cartService.setProducts()
   }
 
+  ngDoCheck():void {
+    this.totalCost = this.cartService.getTotalCost()
+    this.totalQuantity = this.cartService.getTotalQuantity()
+  }
+
   trackByIndex (index: number, product: Product): Number {
     return index;
    }
+
+
 }

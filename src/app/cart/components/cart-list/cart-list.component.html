@@ -1,4 +1,6 @@
 <h2>Cart:</h2>
 <ul>
-  <li *ngFor="let product of productsInCart; trackBy: trackByIndex">{{product?.name}}</li>
+  <app-cart-item *ngFor="let product of productsInCart; trackBy: trackByIndex" [product]="product"></app-cart-item>
 </ul>
+ <h2>Total cost: {{totalCost}}</h2>
+ <h2>Total quantity: {{totalQuantity}}</h2>

@@ -2,7 +2,7 @@ import { Product } from "../models/product";
 
 export const MOCK_PRODUCTS: Product[] = [
   {
-    name: 'Luice Vitton',
+    name: 'Channel',
     description: 'Parfum colection brand perfume.',
     price: 50,
     category: 'Perfume',
