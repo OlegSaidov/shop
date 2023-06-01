@@ -25,6 +25,7 @@ export class ProductListComponent implements OnInit {
     }
 
   private showProducts (): void {
+    // тут можно использовать async pipe, но это будущее задание
     this.productService.getProducts()
     .then(products => this.products = products);
   }

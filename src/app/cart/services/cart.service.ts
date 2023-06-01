@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/products/models/product';
 
+// Это и есть регистрация сервиса, больше его не надо добавлять в providers
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +21,9 @@ setProducts (): Product[] {
   return this.products;
 }
 
+// с точки зрения попробовать - ок,
+// с точки зрения полезности - думаю, что такое количество приватности не оправдано,
+// слишком много добавляет кода не нужного и простого
 private get totalCost(): number {
   return this._totalCost
 }

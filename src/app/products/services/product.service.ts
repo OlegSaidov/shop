@@ -6,7 +6,8 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService {
-  products: Product[] = MOCK_PRODUCTS
+  products: Product[] = MOCK_PRODUCTS;
+
   getProducts () {
     return Promise.resolve(this.products);
   }

@@ -20,6 +20,8 @@ export class CartListComponent implements OnInit {
     this.productsInCart = this.cartService.setProducts()
   }
 
+  // можно сделать totalCost, totalQuantity гетерами и не нужно тогда будет
+  // использовать ngDoCheck
   ngDoCheck():void {
     this.totalCost = this.cartService.getTotalCost()
     this.totalQuantity = this.cartService.getTotalQuantity()
