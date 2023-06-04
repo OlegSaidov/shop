@@ -11,6 +11,7 @@ import { ProductService } from './services/product.service';
     CommonModule
   ],
   exports: [ProductListComponent],
-  providers: [ProductService]
+  // сервис уже зарегистрирован через свой декоратор
+  // providers: [ProductService]
 })
 export class ProductsModule { }
