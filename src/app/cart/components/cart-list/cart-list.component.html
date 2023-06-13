@@ -1,6 +1,17 @@
-<h2>Cart:</h2>
-<ul>
-  <app-cart-item *ngFor="let product of productsInCart; trackBy: trackByIndex" [product]="product"></app-cart-item>
-</ul>
- <h2>Total cost: {{totalCost}}</h2>
- <h2>Total quantity: {{totalQuantity}}</h2>
+<div *ngIf="isEmptyCart">
+  <h2>Cart:</h2>
+  <ul>
+    <app-cart-item
+    *ngFor="let product of productsInCart; trackBy: trackByIndex"
+     [product]="product"
+     (increase)="increase($event)"
+     (decrease)="decrease($event)"
+     (removeProduct)="removeProduct($event)"
+     >
+    </app-cart-item>
+  </ul>
+   <h2>Total cost: {{totalCost}}</h2>
+   <h2>Total quantity: {{totalQuantity}}</h2>
+   <button (click)="removeAll()">Remove All Products</button>
+</div>
+
