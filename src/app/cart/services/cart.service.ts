@@ -47,6 +47,7 @@ export class CartService {
     ];
   }
 
+  // модификатор public обычно не указывают
   public increaseQuantity(cartProduct: CartProduct): void {
     this._changeQuantity(
       cartProduct,
